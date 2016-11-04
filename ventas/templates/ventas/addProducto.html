@@ -1,0 +1,16 @@
+
+{% extends 'blog/base.html' %}
+{% block title %} Agregar Producto {% endblock %}
+{% block content %}
+      <form action="." method="POST">
+          {% csrf_token %}
+          {{ form.as_p}}
+          <input type="submit" value="Grabar">
+          <input type="reset" value= "Limpiar">
+      </form>
+        <br>
+          {{ informacion }}
+<br>
+<a href={% url "vista_producto" %} >Regresar a la lista de Productos </a>
+<br>
+{% endblock %}
