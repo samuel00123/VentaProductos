@@ -5,11 +5,11 @@
 <h1>Catalogo de Productos:</h1>
 <br>
 {% if user.is_authenticated %}
-<a href={% url "vista_agregar_producto" %} >Agregar nuevo producto</a>
+<a href={% url "vista_agregar_producto" %} >Agregar nuevo producto</a><br>
 {% endif %}
 {% if productos %}
         {% for p in productos %}
-              <p>{{p.nombre}}</p>
+              <p><a href="/producto/{{p.id}}/">{{p.nombre}}</a></p>
         {% endfor %}
 
 {% else %}

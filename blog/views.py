@@ -20,6 +20,10 @@ def productos_view (request):
         prod= Producto.objects.filter(status=True)
         ctx={'productos':prod}
         return render_to_response('blog/productos.html',ctx,context_instance=RequestContext(request))
+def singleProduct_view(request,id_prod):
+        prod=Producto.objects.get(id=id_prod)
+        ctx={'producto':prod}
+        return render_to_response('blog/SingleProducto.html',ctx,context_instance=RequestContext(request))
 
 def contacto_view(request):
         info_enviado=False

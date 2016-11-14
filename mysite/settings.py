@@ -54,6 +54,7 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'mysite.urls'
 
+AUTH_PROFILE_MODULE= 'ventas.userProfile'
 
 
 TEMPLATES = [
@@ -85,7 +86,11 @@ DATABASES = {
     }
 }
 
+MEDIA_URL = '/media/'
 
+#Cuando suba los archivos de media (imagenes sonido, video), van a servirse
+#desde ese url.
+MEDIA_ROOT = os.sep.join(os.path.abspath(__file__).split(os.sep)[:-2] + ['media'])
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 

@@ -5,9 +5,9 @@ urlpatterns = [
     url(r'^$', views.index_view, name='vista_principal'),
     url(r'^about/$', views.about_view, name='vista_about'),
     url(r'^productos/$', views.productos_view, name= 'vista_producto'),
+    url(r'^producto/(?P<id_prod>.*)/$',views.singleProduct_view, name= 'vista_single_producto'),
     url(r'^contacto/$', views.contacto_view, name='vista_contacto'),
     url(r'^login/$',views.login_view,name='vista_login'),
     url(r'^logout/$',views.logout_view,name='vista_logout'),
-
 
 ]
